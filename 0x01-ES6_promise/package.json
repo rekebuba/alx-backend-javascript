@@ -1,0 +1,44 @@
+{
+  "name": "0x01-ES6_promise",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node $1",
+    "run": "node $1",
+    "test": "jest",
+    "test-file": "jest $1",
+    "lint": "eslint .",
+    "lint-file": "eslint $1",
+    "check": "npm test && npm run lint",
+    "check-file": "npm run test-file -- $1 && npm run lint-file -- $1"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-jest": "^27.0.6",
+    "eslint": "^7.32.0",
+    "jest": "^27.5.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "es2021": true,
+      "jest": true
+    },
+    "extends": [
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "rules": {}
+  }
+}
