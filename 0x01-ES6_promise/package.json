@@ -8,7 +8,7 @@
     "run": "node $1",
     "test": "jest",
     "test-file": "jest $1",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .js",
     "lint-file": "eslint $1",
     "check": "npm test && npm run lint",
     "check-file": "npm run test-file -- $1 && npm run lint-file -- $1"
@@ -16,9 +16,13 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "babel-jest": "^27.0.6",
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "babel-jest": "^27.5.1",
     "eslint": "^7.32.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-react": "^7.35.0",
     "jest": "^27.5.1"
   },
   "babel": {
