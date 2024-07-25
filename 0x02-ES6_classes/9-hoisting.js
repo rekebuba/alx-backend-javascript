@@ -8,16 +8,8 @@ export class HolbertonClass {
     return this._year;
   }
 
-  set year(value) {
-    this._year = value;
-  }
-
   get location() {
     return this._location;
-  }
-
-  set location(value) {
-    this._location = value;
   }
 }
 
@@ -35,19 +27,8 @@ export class StudentHolberton {
     return `${this._firstName} ${this._lastName}`;
   }
 
-  set fullName(value) {
-    const parts = value.split(' ');
-    if (parts.length === 2) {
-      [this._firstName, this._lastName] = parts;
-    }
-  }
-
   get holbertonClass() {
     return this.holbertonClass;
-  }
-
-  set holbertonClass(value) {
-    this._holbertonClass = value;
   }
 
   get fullStudentDescription() {
