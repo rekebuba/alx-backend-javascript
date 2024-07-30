@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 export default function updateStudentGradeByCity(getList, city, newGrades) {
   if (!(getList instanceof Array)) {
     return [];
@@ -9,7 +10,9 @@ export default function updateStudentGradeByCity(getList, city, newGrades) {
     .map((student) => {
       if (gradeMap.has(student.id)) {
         student.grade = gradeMap.get(student.id);
-      } else {
+      }
+
+      if (!student.hasOwnProperty('grade')) {
         student.grade = 'N/A';
       }
 
