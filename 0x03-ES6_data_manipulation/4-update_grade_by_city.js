@@ -1,20 +1,18 @@
 /* eslint-disable no-prototype-builtins */
-export default function updateStudentGradeByCity(getList, city, newGrades) {
-  if (!(getList instanceof Array)) {
-    return [];
-  }
-
-  const gradeMap = new Map(newGrades.map(({ studentId, grade }) => [studentId, grade]));
-
-  return getList.filter((value) => value.location === city)
+export default function updateStudentGradeByCity(list, city, newGrade) {
+  return list
+    .filter((obj) => obj.location === city)
     .map((student) => {
-      if (gradeMap.has(student.id)) {
-        student.grade = gradeMap.get(student.id);
-      }
+      newGrade.map((studentGrade) => {
+        if (studentGrade.studentId === student.id) {
+          student.grade = studentGrade.grade;
+        }
 
-      if (!student.hasOwnProperty('grade')) {
-        student.grade = 'N/A';
-      }
+        if (!student.hasOwnProperty('grade')) {
+          student.grade = 'N/A';
+        }
+        return student;
+      });
 
       return student;
     });
