@@ -21,6 +21,7 @@ module.exports = {
       "no-underscore-dangle": "off",
       "max-classes-per-file": "off",
       "no-plusplus": "off",
+      "no-param-reassign": "off",
     },
     overrides: [
       {
