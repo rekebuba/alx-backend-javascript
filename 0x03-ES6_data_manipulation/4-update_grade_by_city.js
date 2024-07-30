@@ -1,19 +1,17 @@
-/* eslint-disable no-prototype-builtins */
-export default function updateStudentGradeByCity(list, city, newGrade) {
-  return list
-    .filter((obj) => obj.location === city)
-    .map((student) => {
-      newGrade.map((studentGrade) => {
-        if (studentGrade.studentId === student.id) {
-          student.grade = studentGrade.grade;
-        }
+export default function updateStudentGradeByCity(students, city, newGrades) {
+  const defaultGrade = { grade: 'N/A' };
 
-        if (!student.hasOwnProperty('grade')) {
-          student.grade = 'N/A';
-        }
-        return student;
-      });
-
-      return student;
-    });
+  if (students instanceof Array) {
+    return students
+      .filter((student) => student.location === city)
+      .map((student) => ({
+        id: student.id,
+        firstName: student.firstName,
+        location: student.location,
+        grade: (newGrades
+          .filter((grade) => grade.studentId === student.id)
+          .pop() || defaultGrade).grade,
+      }));
+  }
+  return [];
 }
