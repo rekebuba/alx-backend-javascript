@@ -1,5 +1,5 @@
 export default function updateStudentGradeByCity(getList, city, newGrades) {
-  if (!(students instanceof Array)) {
+  if (!(getList instanceof Array)) {
     return [];
   }
 
