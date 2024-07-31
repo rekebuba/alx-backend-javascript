@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "task_4": "file:task_4",
+    "typescript_dependencies": "file:task_5"
+  }
+}
