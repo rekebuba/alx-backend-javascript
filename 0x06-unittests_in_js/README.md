@@ -1,1 +1,1 @@
-# 0x06-unittests_in_j
+# 0x06-unittests_in_js
